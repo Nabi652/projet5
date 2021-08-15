@@ -166,6 +166,11 @@ footer {
   height: 100%;
 }
 
+footer a {
+  text-decoration: none;
+  color: black;
+}
+
 /* --------------------- background des articles 
 .cell {
   background-color: beige;
