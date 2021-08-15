@@ -78,6 +78,7 @@ h1 {
   box-shadow: 1px 4px 1px 0px;
   /* transition: all 1s ease-in; */
   cursor: pointer;
+  position: relative;
 }
 
 /* ------------------------- images des oursons ----------------------*/
@@ -113,6 +114,25 @@ h1 {
 .box-garfunkel,
 .box-gustav {
   margin-top: 30px;
+}
+
+/* ---------------------------- bouton ajouter article ------------------------*/
+
+button {
+  border: 1px solid rgba(128, 128, 128, 0.575);
+  border-radius: 20px;
+  width: 30px;
+  height: 30px;
+  background-color: #db277846;
+  font-weight: bold;
+  position: absolute;
+  bottom: 25px;
+  left: 250px;
+}
+
+button a {
+  text-decoration: none;
+  color: black;
 }
 
 /* ------------------------------------- hover sur les articles ---------------------------*/

@@ -36,7 +36,7 @@ body {
   justify-content: space-between;
 }
 
-/* ---------------------- style du panier ---------------------*/
+/* ---------------------- style du panier du header ---------------------*/
 
 li a {
   color: black;
@@ -50,4 +50,39 @@ li a:hover {
   color: #af6ca2;
   font-weight: bolder;
   cursor: default;
+}
+
+/* -------------------------------------- tableau pour le panier ---------------*/
+
+table {
+  border: 1px solid red;
+  height: 100%;
+  width: 95%;
+  height: 200px;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.new {
+  width: 60%;
+  margin: auto;
+
+  text-align: center;
+  width: 100%;
+  display: table-cell;
+}
+
+.new1 {
+  display: table-cell;
+  width: 30%;
+  text-align: center;
+}
+
+.test1,
+.test2,
+.test3,
+.test4 {
+  display: table-row;
+  width: 100%;
+  border: 1px solid red;
 }
