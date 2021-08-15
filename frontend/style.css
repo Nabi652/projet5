@@ -150,3 +150,50 @@ footer {
 .cell {
   background-color: beige;
 }*/
+
+/* ------------------------------------ media queries ----------------------------*/
+
+@media only screen and (min-width: 370px) and (max-width: 1000px) {
+  /* ------------------ taille de la description --------------*/
+
+  article p {
+    margin: auto;
+    width: 70%;
+  }
+
+  /* -------------------------- articles arnold, lenny : margin-top ---------------*/
+
+  .box-arnold,
+  .box-lenny {
+    margin-top: 30px;
+  }
+
+  .cell {
+    width: 90%;
+  }
+  /* ------------------------ footer -------------------*/
+
+  .box-footer ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: space-around;
+    padding-top: 50px;
+  }
+}
+
+@media only screen and (min-width: 1000px) and (max-width: 1260px) {
+  /* --------------------- margin-top de l'ourson Lenny & carl------------------------*/
+
+  .box-lenny {
+    margin-top: 30px;
+  }
+}
+
+@media only screen and (min-width: 1260px) and (max-width: 1260px) {
+  /* --------------------- margin-top de l'ourson Lenny & carl------------------------*/
+
+  .box-lenny {
+    margin-top: 0;
+  }
+}
