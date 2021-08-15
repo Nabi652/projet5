@@ -7,7 +7,7 @@
 
 body {
   margin: 0;
-  min-height: 200vh; /* fait deux fois la taille de l'écran utilisateur*/
+
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 /* ------------------------------- logo ---------------------*/
@@ -122,6 +122,28 @@ h1 {
   transition: 0.5s;
   transform: translateY(5px);
   transform: translateY(-5px);
+}
+
+/* ------------------------------------ footer -----------------------------*/
+footer {
+  margin-top: 50px;
+  height: 150px;
+  background-color: #f3e9f1;
+}
+
+.box-footer ul {
+  display: flex;
+  font-size: 20px;
+  height: 100%;
+  padding-top: 50px;
+  justify-content: space-evenly;
+}
+
+.box-footer li {
+  cursor: pointer;
+}
+.box-footer {
+  height: 100%;
 }
 
 /* --------------------- background des articles 
