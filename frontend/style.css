@@ -13,7 +13,7 @@ body {
 /* ------------------------------- logo ---------------------*/
 .box-logo {
   height: 180px;
-  width: 200px;
+  width: 300px;
   border-top-left-radius: 20px;
 }
 .img-logo {
@@ -55,7 +55,7 @@ li a:hover {
 /* ------------------- titre h1 -------------------*/
 
 h1 {
-  color: #9b61da;
+  color: #9c61dab4;
   text-align: center;
 }
 

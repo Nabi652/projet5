@@ -7,13 +7,12 @@
 
 body {
   margin: 0;
-
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 /* ------------------------------- logo ---------------------*/
 .box-logo {
   height: 180px;
-  width: 200px;
+  width: 300px;
   border-top-left-radius: 20px;
 }
 .img-logo {
