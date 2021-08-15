@@ -113,3 +113,41 @@ button:hover {
   transition: 0.5s;
   cursor: pointer;
 }
+
+/* ------------------------------ media query ------------------------------------*/
+
+@media only screen and (min-width: 370px) and (max-width: 1000px) {
+  /* --------------------- ensemble photo et informations produit ---------------*/
+
+  .ensemble-photo-infos {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 20px;
+  }
+
+  /* -----------------image produit --------------*/
+  .box-img {
+    width: 100%;
+  }
+
+  /* ----------------------- texte descriptif du produit -------------------*/
+  .description {
+    text-align: center;
+  }
+
+  /* ----------------------- texte : choisir la couleur produit ------------------*/
+  .couleur-produit {
+    text-align: center;
+  }
+
+  /* -------------------------- boutton d'achat "ajouter au panier"----------------*/
+
+  button {
+    width: 90%;
+    margin: auto;
+  }
+
+  .box-produit {
+    padding-bottom: 20px;
+  }
+}
