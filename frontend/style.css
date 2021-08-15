@@ -196,6 +196,7 @@ footer a {
   .cell {
     width: 90%;
   }
+
   /* ------------------------ footer -------------------*/
 
   .box-footer ul {
@@ -220,5 +221,57 @@ footer a {
 
   .box-lenny {
     margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 370px) and (max-width: 475px) {
+  /* ------------------- bouton ajouter ----------------------*/
+
+  button {
+    bottom: 7px;
+  }
+}
+
+@media only screen and (min-width: 475px) and (max-width: 487px) {
+  /* ------------------- bouton ajouter ----------------------*/
+
+  button {
+    bottom: 28px;
+  }
+}
+
+@media only screen and (min-width: 487px) and (max-width: 585px) {
+  /* ------------------- bouton ajouter ----------------------*/
+
+  button {
+    bottom: 28px;
+    left: 300px;
+  }
+}
+
+@media only screen and (min-width: 585px) and (max-width: 688px) {
+  /* ------------------- bouton ajouter ----------------------*/
+
+  button {
+    bottom: 28px;
+    left: 380px;
+  }
+}
+
+@media only screen and (min-width: 688px) and (max-width: 800px) {
+  /* ------------------- bouton ajouter ----------------------*/
+
+  button {
+    bottom: 50px;
+    left: 400px;
+  }
+}
+
+@media only screen and (min-width: 800px) and (max-width: 1000px) {
+  /* ------------------- bouton ajouter ----------------------*/
+
+  button {
+    bottom: 50px;
+    left: 500px;
   }
 }
