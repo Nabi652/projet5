@@ -178,3 +178,89 @@ button:hover {
   background: linear-gradient(190deg, #9356dc, #ff79da);
   transition: 0.3s;
 }
+
+/* ------------------------------ media query ----------------------------*/
+
+@media only screen and (min-width: 370px) and (max-width: 537px) {
+  /* ----------------- formulaire -------------------------------*/
+  .formulaire {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .box1,
+  .box2,
+  .box3,
+  .box4,
+  .box5,
+  .box6,
+  .box7 {
+    position: initial;
+    padding: 0;
+    margin: 0;
+    margin: auto;
+  }
+
+  button {
+    margin: auto;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (min-width: 537px) and (max-width: 1263px) {
+  /* ---------------------- formulaire -----------------------*/
+  .formulaire {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+  }
+
+  .box1,
+  .box2,
+  .box3,
+  .box4,
+  .box5,
+  .box6,
+  .box7 {
+    position: initial;
+    padding: 0;
+    margin: 0;
+    margin: auto;
+  }
+  button {
+    margin-top: 25px;
+    margin-bottom: 25px;
+  }
+}
+
+@media only screen and (min-width: 1263px) and (max-width: 1300px) {
+  /* ---------------------- formulaire -----------------------*/
+  .formulaire {
+    display: flex;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  .box1,
+  .box2,
+  .box3,
+  .box4,
+  .box5,
+  .box6,
+  .box7 {
+    position: initial;
+    padding: 0;
+    margin: 0;
+    margin: auto;
+  }
+
+  button {
+    margin-top: 25px;
+  }
+}
