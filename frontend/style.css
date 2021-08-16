@@ -91,7 +91,7 @@ h1 {
 }
 
 /* -------------------------- div regroupant images des oursons----------------------*/
-.box-img {
+.boximg {
   display: flex;
   justify-content: center;
 }
