@@ -52,36 +52,129 @@ li a:hover {
 }
 
 /* -------------------------------------- tableau pour le panier ---------------*/
-
-table {
-  border: 1px solid red;
-  height: 100%;
+.box-panier {
   width: 95%;
-  height: 200px;
   margin: auto;
   margin-top: 50px;
 }
 
-.new {
-  width: 60%;
+.box-panier ul {
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid rgba(128, 128, 128, 0.452);
+  background-color: rgba(128, 128, 128, 0.192);
+  height: 50px;
+}
+
+li {
+  padding-top: 10px;
+}
+
+/* ----------------- formulaire à remplir -----------------*/
+form {
+  display: flex;
+  width: 95%;
   margin: auto;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+}
+/* -------------------------  titre passez votre commande -----------------------*/
 
+h3 {
   text-align: center;
-  width: 100%;
-  display: table-cell;
+  margin-bottom: 30px;
 }
 
-.new1 {
-  display: table-cell;
-  width: 30%;
+/* ------------------------------- largeur et hauteur des input ---------------------*/
+
+#prenom,
+#nom,
+#mail,
+#adresse,
+#code,
+#ville {
+  width: 300px;
+  height: 50px;
+}
+
+/* ---------------------------- centrer le texte au dessus des input --------------------*/
+.box label {
   text-align: center;
 }
 
-.test1,
-.test2,
-.test3,
-.test4 {
-  display: table-row;
-  width: 100%;
-  border: 1px solid red;
+/* ------------------------------- mettre en position absolute toutes les div des input ----------------*/
+.box {
+  position: absolute;
+}
+
+/* -------------------------- place chaque div -------------------------*/
+
+.box1 {
+  left: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box2 {
+  left: 550px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box3 {
+  right: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box4 {
+  left: 50px;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+
+.box5 {
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+  left: 550px;
+}
+
+.box6 {
+  position: absolute;
+  right: 50px;
+  top: 80px;
+  display: flex;
+  flex-direction: column;
+}
+.box7 {
+  position: absolute;
+  position: absolute;
+  left: 450px;
+  top: 220px;
+}
+
+/* -------------------- changement font size de l'input qui sera tapé----------------**/
+
+input {
+  outline: none;
+  font-size: large;
+}
+/* --------------------------- bouton en position absolute ----------------*/
+
+button {
+  width: 500px;
+  height: 60px;
+  font-weight: bold;
+  font-size: large;
+  border: 1px solid rgba(128, 128, 128, 0.473);
+  border-radius: 99px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: linear-gradient(190deg, #9356dc, #ff79da);
+  transition: 0.3s;
 }

@@ -105,7 +105,7 @@ button {
 button {
   border: 1px solid grey;
   border-radius: 5px;
-  background-color: #db2777;
+  background: linear-gradient(190deg, #9356dc, #ff79da);
 }
 
 button:hover {

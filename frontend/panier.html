@@ -24,24 +24,58 @@
     </header>
 
     <main>
-      <!-- <div class="votre-panier"> -->
-      <table class="tableau-panier">
-        <thead>
-          <tr>
-            <th class="test1">Produit</th>
-            <th class="test2">Quantité</th>
-            <th class="test3">Prix</th>
-            <th class="test4">Total</th>
-          </tr>
-        </thead>
-        <tbody class="tbody">
-          <tr class="ensemble-ligne2">
-            <td class="new">Total</td>
-            <td class="new1">0,00€</td>
-          </tr>
-        </tbody>
-      </table>
-      <!-- </div> -->
+      <div class="box-panier">
+        <ul>
+          <li>Produit</li>
+          <li>Quantité</li>
+          <li>Prix</li>
+          <li>Total</li>
+        </ul>
+        <ul>
+          <li>Total</li>
+          <li>0,00€</li>
+        </ul>
+      </div>
     </main>
+    <aside>
+      <div class="formulaire">
+        <h3>Passer commande</h3>
+
+        <form action="">
+          <div class="box1 box">
+            <label for="prenom">Prénom </label>
+            <input type="prenom" id="prenom" />
+          </div>
+          <div class="box2 box">
+            <label for="nom">Nom </label>
+            <input type="nom" id="nom" />
+          </div>
+          <div class="box3 box">
+            <label for="mail">Adresse e-mail </label>
+            <input type="mail" id="mail" />
+          </div>
+          <br />
+          <br />
+          <br />
+          <br />
+          <div class="box4 box">
+            <label for="adresse">Adresse </label>
+            <input type="adresse" id="adresse" />
+          </div>
+          <div class="box5 box">
+            <label for="code">Code postal </label>
+            <input type="code" id="code" />
+          </div>
+          <div class="box6 box">
+            <label for="ville">Ville </label>
+            <input type="ville" id="ville" />
+          </div>
+          <br />
+          <div class="box7 box">
+            <button>Valider pour paiement</button>
+          </div>
+        </form>
+      </div>
+    </aside>
   </body>
 </html>
