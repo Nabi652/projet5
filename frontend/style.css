@@ -229,7 +229,7 @@ footer a {
   /* ------------------- bouton ajouter ----------------------*/
 
   button {
-    bottom: 7px;
+    bottom: 25px;
   }
 }
 
@@ -241,25 +241,25 @@ footer a {
   }
 }
 
-@media only screen and (min-width: 487px) and (max-width: 585px) {
+@media only screen and (min-width: 487px) and (max-width: 497px) {
   /* ------------------- bouton ajouter ----------------------*/
 
   button {
-    bottom: 28px;
+    bottom: 25px;
     left: 300px;
   }
 }
 
-@media only screen and (min-width: 585px) and (max-width: 688px) {
+@media only screen and (min-width: 497px) and (max-width: 760px) {
   /* ------------------- bouton ajouter ----------------------*/
 
   button {
-    bottom: 28px;
+    bottom: 40px;
     left: 380px;
   }
 }
 
-@media only screen and (min-width: 688px) and (max-width: 800px) {
+@media only screen and (min-width: 760px) and (max-width: 815px) {
   /* ------------------- bouton ajouter ----------------------*/
 
   button {
@@ -268,11 +268,20 @@ footer a {
   }
 }
 
-@media only screen and (min-width: 800px) and (max-width: 1000px) {
+@media only screen and (min-width: 815px) and (max-width: 982px) {
   /* ------------------- bouton ajouter ----------------------*/
 
   button {
-    bottom: 50px;
-    left: 500px;
+    bottom: 60px;
+    left: 600px;
+  }
+}
+
+@media only screen and (min-width: 982px) and (max-width: 1000px) {
+  /* ------------------- bouton ajouter ----------------------*/
+
+  button {
+    bottom: 70px;
+    left: 700px;
   }
 }
