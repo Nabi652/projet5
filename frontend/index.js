@@ -48,20 +48,6 @@ function afficheList(tableau) {
     // j'ai donné une class à la variable boxImage => "box.img"
     boxImage.setAttribute("class", "box-img");
 
-    // creation lien sur les photos
-    //creation d'une balise <a>
-    let lien = document.createElement("a");
-
-    //ajout du <a> à la div cell
-    div.appendChild(lien);
-
-    // ajout d'un hrf avec le lien de la page produit
-    lien.setAttribute("href", "./produit.html");
-
-    //ajout de l'image au a
-    lien.appendChild(image);
-    lien = "./produit.html";
-
     //creation d'une balise <p> pour description
     let description = document.createElement("p");
 
@@ -79,6 +65,27 @@ function afficheList(tableau) {
 
     //ajout du <h3> à la div cell
     div.appendChild(prix);
+
+    //création du symbole + à côté des prix qui sera cliquable
+    //creation d'une balise <a>
+    let lien = document.createElement("a");
+
+    //ajout du <a> à la div cell
+    div.appendChild(lien);
+
+    // ajout d'un hrf avec le lien de la page produit
+    lien.setAttribute("href", "./produit.html");
+
+    //ajouter du texte au lien a
+    lien.textContent = "+";
+
+    //création d'un bouton pour le lien
+    let bouton = document.createElement("button");
+    //ajout du bouton à la div cell
+    div.appendChild(bouton);
+
+    //ajout du lien <a> au bouton
+    bouton.appendChild(lien);
   }
 }
 
