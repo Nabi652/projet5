@@ -106,4 +106,13 @@ function afficher(ours) {
 
   //ajout du contenu au <p> class couleur-produit (variable couleurProduit)
   couleurProduit.textContent = "Choisir la couleur du produit";
+
+  //création balise select pour menu déroulant couleur
+  let selection = document.createElement("select");
+
+  //ajout d'un ID à select
+  selection.setAttribute("id", "couleurs");
+
+  //ajout de select (id: couleurs, variable : selection) à la balise couleur-produit (variable couleurProduit)
+  couleurProduit.appendChild(selection);
 }
