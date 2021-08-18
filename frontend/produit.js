@@ -16,38 +16,60 @@ fetch(url2)
     afficher(ours);
   });
 
+//-------------------------------------------------------
 // création fonction ours pour les images
 function afficher(ours) {
-  // création d'une balise image et selection de l'Id oursImage présente dans code html
-  let img = document.getElementById("oursImage");
+  // création div class=ensemble-photo-infos qui va regrouper la photo et les infos
+  let boxEnsemble = document.createElement("div");
+
+  //donner une class à boxEnsemble (class = ensemble-photo-infos)
+  boxEnsemble.setAttribute("class", "ensemble-photo-infos");
+
+  //selection main
+  let main = document.querySelector("main");
+
+  //ajout de la div class= ensemble-photo-infos à main
+  main.appendChild(boxEnsemble);
+
+  //création de la div box-img qui regroupera l'image
+  let boxImage = document.createElement("div");
+
+  //donner une class à boxImage (class = box-img)
+  boxImage.setAttribute("class", "box-img");
+
+  //ajout de la div class box-img à la div ensemble-photo-infos (variable: boxEnsemble)
+  boxEnsemble.appendChild(boxImage);
+
+  //creation de la balise img
+  let img = document.createElement("img");
+
+  //donner id à image
+  img.setAttribute("id", "oursImage");
 
   //attribution d'un src (ours.imageUrl) à la variable img
   img.setAttribute("src", ours.imageUrl);
 
-  //ajout du nom pour chaque ours
-  let nomOurs = document.getElementById("nomOurs");
+  // ajouter à la div box-img(variable boxImage)
+  boxImage.appendChild(img);
 
-  //attribution d'une valeur à nomOurs
+  //creation div class=ensemble-informations
+  let ensembleInfos = document.createElement("div");
+
+  //ajout d'une class div (variable ensembleInfos)
+  ensembleInfos.setAttribute("class", "ensemble-informations");
+
+  //ajout de la div à  la div photos-infos-photos(variable:boxEnsemble)
+  boxEnsemble.appendChild(ensembleInfos);
+
+  //création d'une balise <h2> pour le nom des ours
+  let nomOurs = document.createElement("h2");
+
+  //donner une class à h2
+  nomOurs.setAttribute("class", "nom-ours");
+
+  //attribution valeur à h2
   nomOurs.textContent = ours.name;
 
-  //---------------------------------------------------------------------------------------
-
-  // tableau des couleurs
-  let tab = ours.colors;
-  let select = document.getElementById("couleurs");
-
-  // création d'un tableau de couleur et de la variable "couleur" qui représentera chaque couleur
-  for (let couleur of tab) {
-    //création d'un menu déroulant pour les couleurs
-    let option = document.createElement("option");
-
-    //ajout de la variabel couleur à la balise option
-    option.textContent = couleur;
-
-    //ajout de la valeur et de la valuer à option
-    option.setAttribute("value", couleur);
-    //attribuer option à select
-
-    select.appendChild(option);
-  }
+  //ajout du h2 à la div ensemble-informations
+  ensembleInfos.appendChild(nomOurs);
 }
