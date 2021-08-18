@@ -84,4 +84,26 @@ function afficher(ours) {
 
   //ajout de p à la balise ensemble-informations (variable:ensembleInfos)
   ensembleInfos.appendChild(description);
+
+  //création balise div class = box-prix-bouton
+  let boxPrixBouton = document.createElement("div");
+
+  //ajout d'une class à la div (class = box-prix-bouton)
+  boxPrixBouton.setAttribute("class", "box-prix-bouton");
+
+  //ajout de la div (class = box-prix-bouton variable : boxPrixBouton) à la
+  //div class= ensemble-informations (variable ensembleInfos)
+  ensembleInfos.appendChild(boxPrixBouton);
+
+  //creation d'une balise <p> pour choisir la couleur (class = couleur-produit)
+  let couleurProduit = document.createElement("p");
+
+  //ajout d'une class à p (class couleur-produit)
+  couleurProduit.setAttribute("class", "couleur-produit");
+
+  //ajout du p à la div (class = box-prix-bouton ou variable boxPrixBouton)
+  boxPrixBouton.appendChild(couleurProduit);
+
+  //ajout du contenu au <p> class couleur-produit (variable couleurProduit)
+  couleurProduit.textContent = "Choisir la couleur du produit";
 }
