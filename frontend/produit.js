@@ -168,45 +168,50 @@ function afficher(ours) {
 
   // création d'une variable carts
   let carts = document.querySelectorAll(".ajouter-panier");
+
+  //-------------------------------------------------------------------------------------------------------------
   // pour savoir combien de fois le produit a été ajouté au panier
   let produits = [
     {
       name: "Norbert",
       tag: "tan",
       price: 2900,
-      incart: 0,
+      inCart: 0,
     },
     {
       name: "Arnold",
       tag: "white",
       price: 3900,
-      incart: 0,
+      inCart: 0,
     },
     {
       name: "Lenny and Carl",
       tag: "brown",
       price: 5900,
-      incart: 0,
+      inCart: 0,
     },
     {
       name: "Gustav",
       tag: "brown",
       price: 4500,
-      incart: 0,
+      inCart: 0,
     },
     {
       name: "Garfunkel",
       tag: "beige",
       price: 5500,
-      incart: 0,
+      inCart: 0,
     },
   ];
+
+  //---------------------------------------------------------------------------------------
 
   for (let i = 0; i < carts.length; i++) {
     carts[i].addEventListener("click", () => {
       nombrePanier();
     });
   }
+
   //création fonction
   function nombrePanier() {
     let nombreProduit = localStorage.getItem("nombrePanier");
@@ -229,3 +234,19 @@ function afficher(ours) {
     }
   }
 }
+
+// pour ne pas perdre le panier quand on recharge la page
+//cette fonction ne se lancera pas tant qu'on l'apppelle pas
+//pour se faire,on va appeler cette fonction à la fin (après le code)
+
+function onLoadCartNumbers() {
+  let nombreProduit = localStorage.getItem("nombrePanier");
+
+  //s'il y a des clic dans le localstorage, je veux que mon doc
+
+  if (nombreProduit) {
+    document.querySelector("span").textContent = nombreProduit;
+  }
+}
+
+onLoadCartNumbers();
