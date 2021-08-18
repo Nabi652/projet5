@@ -1,10 +1,11 @@
-let tableau = [
-  {
-    name: "norbert",
-    price: "2900",
-    imageUrl: "https://dummyimage.com/100x100/ccc/555",
-  },
-];
+let url = "http://localhost:3000/api/teddies";
+
+fetch(url)
+  .then((response) => response.json())
+  .then((tableau) => {
+    console.log(tableau);
+    afficheList(tableau);
+  });
 
 function afficheList(tableau) {
   for (let ours of tableau) {
@@ -61,7 +62,7 @@ function afficheList(tableau) {
     let prix = document.createElement("h3");
 
     //contenu du <h3> (prix)
-    prix.textContent = ours.price;
+    prix.textContent = parseFloat(ours.price / 100) + "€";
 
     //ajout du <h3> à la div cell
     div.appendChild(prix);
@@ -74,7 +75,7 @@ function afficheList(tableau) {
     div.appendChild(lien);
 
     // ajout d'un hrf avec le lien de la page produit
-    lien.setAttribute("href", "./produit.html");
+    lien.setAttribute("href", "./produit.html?id=" + ours._id);
 
     //ajouter du texte au lien a
     lien.textContent = "+";
@@ -88,12 +89,3 @@ function afficheList(tableau) {
     bouton.appendChild(lien);
   }
 }
-
-let url = "http://localhost:3000/api/teddies";
-
-fetch(url)
-  .then((response) => response.json())
-  .then((tableau) => {
-    console.log(tableau);
-    afficheList(tableau);
-  });

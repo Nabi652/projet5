@@ -26,11 +26,7 @@
     <main class="box-produit">
       <div class="ensemble-photo-infos">
         <div class="box-img">
-          <img
-            src="../backend/images/teddy_1.jpg"
-            alt="l'ourson Norbert"
-            class="img-norbert"
-          />
+          <img id="oursImage" class="img-norbert" />
         </div>
         <div class="ensemble-informations">
           <h2>Ours en peluche "Norbert"</h2>
@@ -39,11 +35,15 @@
             accusantium sequi velit similique quod esse voluptatum nobi.
           </p>
           <div class="box-prix-bouton">
-            <p class="couleur-produit">Choisir la couleur du produit :</p>
+            <p class="couleur-produit">
+              Choisir la couleur du produit :
+              <select id="couleurs"></select>
+            </p>
             <button>Ajouter au panier pour 29,00€</button>
           </div>
         </div>
       </div>
     </main>
+    <script src="./produit.js"></script>
   </body>
 </html>
