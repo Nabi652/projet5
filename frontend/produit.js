@@ -154,7 +154,7 @@ function afficher(ours) {
   //   ajouter <button> à div class="box-prix-bouton (variable boxPrixBouton)
   boxPrixBouton.appendChild(bouton);
 
-  //création d'une balise <a>
+  //création d'une balise <a> pour le bouton ajouter
   let ajouterAuPanier = document.createElement("a");
 
   //donner une class à la balise <a> (class = lienPanier)
