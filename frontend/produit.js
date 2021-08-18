@@ -153,4 +153,16 @@ function afficher(ours) {
 
   //   ajouter <button> à div class="box-prix-bouton (variable boxPrixBouton)
   boxPrixBouton.appendChild(bouton);
+
+  //création d'une balise <a>
+  let ajouterAuPanier = document.createElement("a");
+
+  //donner une class à la balise <a> (class = lienPanier)
+  ajouterAuPanier.setAttribute("class", "ajouter-panier");
+
+  //ajout de <a> à la div box-prix-bouton (variable boxPrixBouton)
+  boxPrixBouton.appendChild(ajouterAuPanier);
+
+  //ajout de du bouton (variable : bouton) à <a>
+  ajouterAuPanier.appendChild(bouton);
 }
