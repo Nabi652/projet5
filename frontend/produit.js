@@ -72,4 +72,16 @@ function afficher(ours) {
 
   //ajout du h2 à la div ensemble-informations
   ensembleInfos.appendChild(nomOurs);
+
+  //créaton d'une balise <p> pour la description
+  let description = document.createElement("p");
+
+  //ajout d'une class à la balise <p> (class= description)
+  description.setAttribute("class", "description");
+
+  //ajout d'une valeur à p
+  description.textContent = ours.description;
+
+  //ajout de p à la balise ensemble-informations (variable:ensembleInfos)
+  ensembleInfos.appendChild(description);
 }
