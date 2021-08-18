@@ -1,7 +1,10 @@
 let url = window.location.href;
 //"./produit.html?id=1234"
-//substring découper une chaine de caractères à partir d'une position. On lui donne à partir de quand on la découpe. On va récuperer le caractère
+
+//substring découper une chaine de caractères à partir d'une position.
+//On lui donne à partir de quand on la découpe. On va récuperer le caractère
 let id = url.substring(url.lastIndexOf("=") + 1);
+
 //lastindexof retourne la position du caractère
 // alert(id); //1234
 
@@ -17,11 +20,15 @@ fetch(url2)
 function afficher(ours) {
   // création d'une balise image et selection de l'Id oursImage présente dans code html
   let img = document.getElementById("oursImage");
+
   //attribution d'un src (ours.imageUrl) à la variable img
   img.setAttribute("src", ours.imageUrl);
 
-  // //ajout du nom pour chaque ours
-  // let nomOurs = document.c;
+  //ajout du nom pour chaque ours
+  let nomOurs = document.getElementById("nomOurs");
+
+  //attribution d'une valeur à nomOurs
+  nomOurs.textContent = ours.name;
 
   //---------------------------------------------------------------------------------------
 
@@ -33,11 +40,14 @@ function afficher(ours) {
   for (let couleur of tab) {
     //création d'un menu déroulant pour les couleurs
     let option = document.createElement("option");
+
     //ajout de la variabel couleur à la balise option
     option.textContent = couleur;
+
     //ajout de la valeur et de la valuer à option
     option.setAttribute("value", couleur);
     //attribuer option à select
+
     select.appendChild(option);
   }
 }

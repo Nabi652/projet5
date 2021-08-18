@@ -80,7 +80,7 @@ li a:hover {
 
 /* --------------------------- titre de l'ourson ----------------------------------*/
 
-h2 {
+#nomOurs {
   text-align: center;
 }
 
