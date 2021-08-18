@@ -110,9 +110,47 @@ function afficher(ours) {
   //création balise select pour menu déroulant couleur
   let selection = document.createElement("select");
 
-  //ajout d'un ID à select
+  //ajout d'un ID à <select>
   selection.setAttribute("id", "couleurs");
 
   //ajout de select (id: couleurs, variable : selection) à la balise couleur-produit (variable couleurProduit)
   couleurProduit.appendChild(selection);
+
+  //création d'une variable tableau pour les couleurs
+  let tableauCouleur = ours.colors;
+
+  // création d'un tableau de couleur et de la variable "couleur" qui représentera chaque couleur
+  for (let couleur of tableauCouleur) {
+    //création d'un menu déroulant pour les couleurs
+    let option = document.createElement("option");
+
+    //ajout de la variabel couleur à la balise option
+    option.textContent = couleur;
+
+    //ajout de la valeur et de la valuer à option
+    option.setAttribute("value", couleur);
+
+    //attribuer option à select
+    selection.appendChild(option);
+  }
+  // //creation d'une balise <h3> pour le prix
+  let price = document.createElement("h3");
+
+  // //ajout d'une class à h3 (class :prix)
+  price.setAttribute("class", "prix");
+  // //ajout balise h3 à div box-prix-bouton (variable boxPrixBouton)
+  boxPrixBouton.appendChild(price);
+
+  //donner valeur à prix
+
+  price.textContent = parseFloat(ours.price / 100) + "€";
+
+  // creation balise <button>
+  let bouton = document.createElement("button");
+
+  // donner valeur à bouton
+  bouton.textContent = "Ajouter au panier";
+
+  //   ajouter <button> à div class="box-prix-bouton (variable boxPrixBouton)
+  boxPrixBouton.appendChild(bouton);
 }

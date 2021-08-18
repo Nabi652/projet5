@@ -64,13 +64,15 @@ li a:hover {
   background-color: #f3e9f1;
   display: flex;
   justify-content: space-around;
+  padding-bottom: 50px;
+  margin-bottom: 50px;
 }
 .box-img {
   width: 340px;
   height: 450px;
 }
 
-.box-img img {
+#oursImage {
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -94,6 +96,20 @@ li a:hover {
 
 .couleur-produit {
   font-size: large;
+}
+
+/* ------------------- menu déroulant couleurs -----------------*/
+
+select {
+  font-size: large;
+  margin-left: 20px;
+  width: 250px;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  padding-left: 80px;
+
+  border: 1px solid rgba(128, 128, 128, 0.363);
 }
 
 button {
