@@ -77,3 +77,24 @@ li6.textContent = "Quantité";
 
 //ajout de <li> à <ul>
 ligne2.appendChild(li6);
+
+// ---------------------- selection de balise aside
+let aside = document.querySelector("aside");
+
+//création div class=formulaire
+let formulaire = document.createElement("div");
+
+//ajouter class (class = formulaire) à la div
+formulaire.setAttribute("class", "formulaire");
+
+//ajouter la div à aside
+aside.appendChild(formulaire);
+
+//creation balise <h3>
+let titreH3 = document.createElement("h3");
+
+//AJOUTER contenu à h3
+titreH3.textContent = "Passer commande";
+
+//ajouter à la div
+formulaire.appendChild(titreH3);
