@@ -1,20 +1,20 @@
 //création d'une balise <main>
 let main = document.querySelector("main");
 
-//creation div class= box-prix
-let boxPrix = document.createElement("div");
+//creation div class= box-panier
+let boxPanier = document.createElement("div");
 
 //ajout class = box-prix à la div (variable)
-boxPrix.setAttribute("class", "box-prix");
+boxPanier.setAttribute("class", "box-panier");
 
 //ajout de la div à <main>
-main.appendChild(boxPrix);
+main.appendChild(boxPanier);
 
 //creation balise <ul>
 let ligne1 = document.createElement("ul");
 
-//ajouter ul à box-prix (variable boxPrix)
-boxPrix.appendChild(ligne1);
+//ajouter ul à box-prix (variable boxPanier)
+boxPanier.appendChild(ligne1);
 
 //creation du premier <li>
 let li1 = document.createElement("li");
@@ -58,7 +58,7 @@ ligne1.appendChild(li4);
 let ligne2 = document.createElement("ul");
 
 //ajouter ul à box-prix (variable boxPrix)
-boxPrix.appendChild(ligne2);
+boxPanier.appendChild(ligne2);
 
 //creation du cinquieme <li>
 let li5 = document.createElement("li");
