@@ -69,6 +69,11 @@ li a:hover {
 li {
   padding-top: 10px;
 }
+/* ---------------------- box formulaire -------------------*/
+
+.formulaire {
+  height: 400px;
+}
 
 /* ----------------- formulaire à remplir -----------------*/
 form {
