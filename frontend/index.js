@@ -75,7 +75,7 @@ function afficheList(tableau) {
     div.appendChild(lien);
 
     // ajout d'un hrf avec le lien de la page produit
-    lien.setAttribute("href", "../frontend/produit.html?id=" + ours._id);
+    lien.setAttribute("href", "./frontend/produit.html?id=" + ours._id);
 
     //ajouter du texte au lien a
     lien.textContent = "+";
