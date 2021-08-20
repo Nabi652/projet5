@@ -151,13 +151,16 @@ function afficher(ours) {
   // donner valeur à bouton
   bouton.textContent = "Ajouter au panier";
 
+  //ajout onclick à bouton
+  bouton.setAttribute("onclick", "maFonctionAjout()");
+
   //   ajouter <button> à div class="box-prix-bouton (variable boxPrixBouton)
   boxPrixBouton.appendChild(bouton);
 
   //création d'une balise <a> pour le bouton ajouter
   let ajouterAuPanier = document.createElement("a");
 
-  //donner une class à la balise <a> (class = lienPanier)
+  //donner une class à la balise <a> (class = ajouter-panier)
   ajouterAuPanier.setAttribute("class", "ajouter-panier");
 
   //ajout de <a> à la div box-prix-bouton (variable boxPrixBouton)
@@ -165,88 +168,27 @@ function afficher(ours) {
 
   //ajout de du bouton (variable : bouton) à <a>
   ajouterAuPanier.appendChild(bouton);
-
-  // création d'une variable carts
-  let carts = document.querySelectorAll(".ajouter-panier");
-
-  //-------------------------------------------------------------------------------------------------------------
-  // pour savoir combien de fois le produit a été ajouté au panier
-  let produits = [
-    {
-      name: "Norbert",
-      tag: "tan",
-      price: 2900,
-      inCart: 0,
-    },
-    {
-      name: "Arnold",
-      tag: "white",
-      price: 3900,
-      inCart: 0,
-    },
-    {
-      name: "Lenny and Carl",
-      tag: "brown",
-      price: 5900,
-      inCart: 0,
-    },
-    {
-      name: "Gustav",
-      tag: "brown",
-      price: 4500,
-      inCart: 0,
-    },
-    {
-      name: "Garfunkel",
-      tag: "beige",
-      price: 5500,
-      inCart: 0,
-    },
-  ];
-
-  //---------------------------------------------------------------------------------------
-
-  for (let i = 0; i < carts.length; i++) {
-    carts[i].addEventListener("click", () => {
-      nombrePanier();
-    });
-  }
-
-  //création fonction
-  function nombrePanier() {
-    let nombreProduit = localStorage.getItem("nombrePanier");
-    console.log(nombreProduit);
-
-    //ici on voit que quand on clique sur "ajouter au panier", le type est "string"
-    // console.log(typeof nombreProduit);
-
-    //changement de string en number
-    nombreProduit = parseInt(nombreProduit);
-    //quand on clique, on voit que c'est devenu un number
-    // console.log(nombreProduit);
-
-    if (nombreProduit) {
-      localStorage.setItem("nombrePanier", nombreProduit + 1);
-      document.querySelector("span").textContent = nombreProduit + 1;
-    } else {
-      localStorage.setItem("nombrePanier", 1);
-      document.querySelector("span").textContent = 1;
-    }
-  }
 }
 
-// pour ne pas perdre le panier quand on recharge la page
-//cette fonction ne se lancera pas tant qu'on l'apppelle pas
-//pour se faire,on va appeler cette fonction à la fin (après le code)
+const maFonctionAjout = () => {
+  let clickStorage = localStorage.getItem("produit");
+  //explications clickstorage demande à localstorage de voir si "produit" existe, pour l'instant, elle n'existe pas
 
-function onLoadCartNumbers() {
-  let nombreProduit = localStorage.getItem("nombrePanier");
+  clickStorage = parseInt(clickStorage);
+  // pour transformer le string en number
 
-  //s'il y a des clic dans le localstorage, je veux que mon doc
+  // s'il y  a déjà des produits enregistrés dans local storage alors
+  //si localStorage.getItem("produit") existe (si "produit" existe ) key = produit
+  //alors il faut lui rajouter +
+  if (clickStorage) {
+    localStorage.setItem("produit", clickStorage + 1);
+    document.querySelector("span").textContent = clickStorage + 1;
 
-  if (nombreProduit) {
-    document.querySelector("span").textContent = nombreProduit;
+    clickStorage + 1;
+  } else {
+    //s'il n'existe pas (produit existe pas, pas de valeur, si on n'a pas cliqué sur le bouton ajouté, on donnera une valeur de 1 à produit)
+    //quand on va cliquer la première fois sur ajouter, ça va appeler else et quand on cliquera une 2ème fois, ça veut dire que produit existe vraiment donc 'if'sera lancé
+    localStorage.setItem("produit", 1);
+    document.querySelector("span").textContent = 1;
   }
-}
-
-onLoadCartNumbers();
+};
