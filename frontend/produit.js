@@ -7,13 +7,16 @@ let id = url.substring(url.lastIndexOf("=") + 1);
 
 //lastindexof retourne la position du caractère
 // alert(id); //1234
-
+//création de variable vide
+let produit;
 let url2 = "http://localhost:3000/api/teddies/" + id;
 fetch(url2)
   .then((response) => response.json())
   .then((ours) => {
     console.log(ours);
     afficher(ours);
+    //quand je recupere le produit, j'ai "ours" (ours stocké dans une ligne)
+    produit = ours;
   });
 
 //-------------------------------------------------------
@@ -166,79 +169,62 @@ function afficher(ours) {
   //ajout de <a> à la div box-prix-bouton (variable boxPrixBouton)
   boxPrixBouton.appendChild(ajouterAuPanier);
 
-  //ajout de du bouton (variable : bouton) à <a>
+  //ajout du bouton (variable : bouton) à <a>
   ajouterAuPanier.appendChild(bouton);
 
-  //local storage
-  // déclarer la variable "produitenregistredslocalstorage" dans laquelle on met
-  //les key et les valeurs qui sont dans le localstorage
-  let produitEnregistreDansLocalStorage = JSON.parse(
-    //au-dessus: on déclare json pour convertir les données au format json qui sont dans le lcoal storage en obet js
-    localStorage.getItem("produits")
-  );
+  //selection menu deroulant quantite
+  let deroulant = document.getElementById("quantite");
 
-  //s'il y a deja des produits enregistrés dans local storage
-  if (produitEnregistreDansLocalStorage) {
-    produitEnregistreDansLocalStorage.push(ours);
-    localStorage.setItem(
-      "produits",
-      JSON.stringify(produitEnregistreDansLocalStorage)
-    );
-    console.log(produitEnregistreDansLocalStorage);
+  //ajout à box-prix
+  boxPrixBouton.appendChild(deroulant);
 
-    //s'il n'y a pas de produit enregistré dans local storage
+  //creation div pour ensemle bouton et menu deroulant quantité
+
+  let boxEnsemble1 = document.createElement("div");
+
+  boxEnsemble1.setAttribute("class", "ensemble1");
+
+  ensembleInfos.appendChild(boxEnsemble1);
+
+  boxEnsemble1.appendChild(ajouterAuPanier);
+  boxEnsemble1.appendChild(deroulant);
+
+  //si le tableau n'existe c'est 0
+  let nbItem = document.getElementById("nombreItem");
+  if (localStorage.getItem("panier") == null) {
+    nbItem.innerHTML = 0;
   } else {
-    produitEnregistreDansLocalStorage = [];
-    produitEnregistreDansLocalStorage.push(ours);
-    localStorage.setItem(
-      "produits",
-      JSON.stringify(produitEnregistreDansLocalStorage)
-    );
+    let tab = JSON.parse(localStorage.getItem("panier"));
+    nbItem.innerHTML = tab.length; // longueur du tableau
+    //quand on vient ajouter un produit
   }
 }
 
 const maFonctionAjout = () => {
-  let clickStorage = localStorage.getItem("produit");
-  //explications clickstorage demande à localstorage de voir si "produit" existe, pour l'instant, elle n'existe pas
-
-  clickStorage = parseInt(clickStorage);
-  // pour transformer le string en number
-
-  // s'il y  a déjà des produits enregistrés dans local storage alors
-  //si localStorage.getItem("produit") existe (si "produit" existe ) key = produit
-  //alors il faut lui rajouter +1
-  if (clickStorage) {
-    localStorage.setItem("produit", clickStorage + 1);
-    document.querySelector("span").textContent = clickStorage + 1;
-
-    clickStorage + 1;
+  let panierStr = localStorage.getItem("panier"); // panier n'est pas un objet mais une chaine
+  //
+  if (panierStr == null) {
+    panier = [];
   } else {
-    //s'il n'existe pas (produit existe pas, pas de valeur, si on n'a pas cliqué sur le bouton ajouté, on donnera une valeur de 1 à produit)
-    //quand on va cliquer la première fois sur ajouter, ça va appeler else et quand on cliquera une 2ème fois, ça veut dire que produit existe
-    //vraiment donc 'if'sera lancé
-    localStorage.setItem("produit", 1);
-    document.querySelector("span").textContent = 1;
+    panier = JSON.parse(panierStr);
   }
+  //dans notre panier on aura un objet ligne
+  //tableau ligne sur une ligne
+  let ligne = {};
+  //menu déroulant : ligne.qte = docgetelementbyId(selecteur menu deourlant).value
+  ligne.qte = 1;
+  ligne.produit = produit; //prix
+  ligne.couleur = document.getElementById("couleurs").value;
+
+  // autre façon d'écrire un objet !!
+  // let ligne = {
+  //   qte : 1,
+  //   produit: ours,
+  //   couleur : "rouge"
+  // }
+
+  panier.push(ligne); // laligne est dans le tableau
+  let nbItem = document.getElementById("nombreItem");
+  nbItem.innerHTML = panier.length; // quand on ajoute on vient mettre à jour le chiffre du panier
+  localStorage.panier = JSON.stringify(panier); // a la place de setItem
 };
-
-//---------------------------------------------------
-
-//-------------------
-// let ajout = document.getElementsByClassName(".ajout-panier");
-// let panier = [
-//   {
-//     _id: "5be9c8541c9d440000665243",
-//     name: "Norbert",
-//     price: 2900,
-//   },
-// ];
-// function afficherPanier(panier) {
-//   for (let ours of panier) {
-//     ajout.addEventListener("click", () => {
-//       if (ajout) {
-//         document.getElementsByClassName("produit").textContent = ours._id;
-//       }
-//     });
-//   }
-//   afficherPanier(panier);
-// }

@@ -88,4 +88,43 @@ function afficheList(tableau) {
     //ajout du lien <a> au bouton
     bouton.appendChild(lien);
   }
+
+  //si le tableau n'existe c'est 0
+  let nbItem = document.getElementById("nombreItem");
+  if (localStorage.getItem("panier") == null) {
+    nbItem.innerHTML = 0;
+  } else {
+    let tab = JSON.parse(localStorage.getItem("panier"));
+    nbItem.innerHTML = tab.length; // longueur du tableau
+    //quand on vient ajouter un produit
+  }
 }
+
+const maFonctionAjout = () => {
+  let panierStr = localStorage.getItem("panier"); // panier n'est pas un objet mais une chaine
+  //
+  if (panierStr == null) {
+    panier = [];
+  } else {
+    panier = JSON.parse(panierStr);
+  }
+  //dans notre panier on aura un objet ligne
+  //tableau ligne sur une ligne
+  let ligne = {};
+  //menu déroulant : ligne.qte = docgetelementbyId(selecteur menu deourlant).value
+  ligne.qte = 1;
+  ligne.produit = produit; //prix
+  ligne.couleur = document.getElementById("couleurs").value;
+
+  // autre façon d'écrire un objet !!
+  // let ligne = {
+  //   qte : 1,
+  //   produit: ours,
+  //   couleur : "rouge"
+  // }
+
+  panier.push(ligne); // laligne est dans le tableau
+  let nbItem = document.getElementById("nombreItem");
+  nbItem.innerHTML = panier.length; // quand on ajoute on vient mettre à jour le chiffre du panier
+  localStorage.panier = JSON.stringify(panier); // a la place de setItem
+};
