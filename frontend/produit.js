@@ -168,6 +168,28 @@ function afficher(ours) {
 
   //ajout de du bouton (variable : bouton) à <a>
   ajouterAuPanier.appendChild(bouton);
+
+  //local storage
+  // stocker la recupération des valeurs du formulaire dans le local storage
+  let produitEnregistreDansLocalStorage = JSON.parse(
+    localStorage.getItem("produits")
+  );
+
+  if (produitEnregistreDansLocalStorage) {
+    produitEnregistreDansLocalStorage.push(ours);
+    localStorage.setItem(
+      "produits",
+      JSON.stringify(produitEnregistreDansLocalStorage)
+    );
+    console.log(produitEnregistreDansLocalStorage);
+  } else {
+    produitEnregistreDansLocalStorage = [];
+    produitEnregistreDansLocalStorage.push(ours);
+    localStorage.setItem(
+      "produits",
+      JSON.stringify(produitEnregistreDansLocalStorage)
+    );
+  }
 }
 
 const maFonctionAjout = () => {
@@ -179,7 +201,7 @@ const maFonctionAjout = () => {
 
   // s'il y  a déjà des produits enregistrés dans local storage alors
   //si localStorage.getItem("produit") existe (si "produit" existe ) key = produit
-  //alors il faut lui rajouter +
+  //alors il faut lui rajouter +1
   if (clickStorage) {
     localStorage.setItem("produit", clickStorage + 1);
     document.querySelector("span").textContent = clickStorage + 1;
@@ -187,8 +209,31 @@ const maFonctionAjout = () => {
     clickStorage + 1;
   } else {
     //s'il n'existe pas (produit existe pas, pas de valeur, si on n'a pas cliqué sur le bouton ajouté, on donnera une valeur de 1 à produit)
-    //quand on va cliquer la première fois sur ajouter, ça va appeler else et quand on cliquera une 2ème fois, ça veut dire que produit existe vraiment donc 'if'sera lancé
+    //quand on va cliquer la première fois sur ajouter, ça va appeler else et quand on cliquera une 2ème fois, ça veut dire que produit existe
+    //vraiment donc 'if'sera lancé
     localStorage.setItem("produit", 1);
     document.querySelector("span").textContent = 1;
   }
 };
+
+//---------------------------------------------------
+
+//-------------------
+// let ajout = document.getElementsByClassName(".ajout-panier");
+// let panier = [
+//   {
+//     _id: "5be9c8541c9d440000665243",
+//     name: "Norbert",
+//     price: 2900,
+//   },
+// ];
+// function afficherPanier(panier) {
+//   for (let ours of panier) {
+//     ajout.addEventListener("click", () => {
+//       if (ajout) {
+//         document.getElementsByClassName("produit").textContent = ours._id;
+//       }
+//     });
+//   }
+//   afficherPanier(panier);
+// }

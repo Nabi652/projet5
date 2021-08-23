@@ -19,6 +19,9 @@ boxPanier.appendChild(ligne1);
 //creation du premier <li>
 let li1 = document.createElement("li");
 
+//ajout class à <li>
+li1.setAttribute("class", "produit");
+
 //ajout de contenu à li1
 li1.textContent = "Produit";
 
@@ -51,32 +54,6 @@ li4.textContent = "Total";
 
 //ajout de <li> à <ul>
 ligne1.appendChild(li4);
-
-//----------------- creation de <ul>
-
-//creation balise <ul>
-let ligne2 = document.createElement("ul");
-
-//ajouter ul à box-prix (variable boxPrix)
-boxPanier.appendChild(ligne2);
-
-//creation du cinquieme <li>
-let li5 = document.createElement("li");
-
-//ajout de contenu à li1
-li5.textContent = "Total";
-
-//ajout de <li> à <ul>
-ligne2.appendChild(li5);
-
-//creation du sixième <li>
-let li6 = document.createElement("li");
-
-//ajout de contenu à li1
-li6.textContent = "Quantité";
-
-//ajout de <li> à <ul>
-ligne2.appendChild(li6);
 
 // ---------------------- selection de balise aside
 let aside = document.querySelector("aside");
@@ -334,3 +311,4 @@ buttonBoxButton7.textContent = "Valider pour paiement";
 
 //ajout du bouton à la div (class: boxButton7)
 boxButton7.appendChild(buttonBoxButton7);
+//--------------------
