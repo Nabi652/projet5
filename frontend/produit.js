@@ -170,11 +170,14 @@ function afficher(ours) {
   ajouterAuPanier.appendChild(bouton);
 
   //local storage
-  // stocker la recupération des valeurs du formulaire dans le local storage
+  // déclarer la variable "produitenregistredslocalstorage" dans laquelle on met
+  //les key et les valeurs qui sont dans le localstorage
   let produitEnregistreDansLocalStorage = JSON.parse(
+    //au-dessus: on déclare json pour convertir les données au format json qui sont dans le lcoal storage en obet js
     localStorage.getItem("produits")
   );
 
+  //s'il y a deja des produits enregistrés dans local storage
   if (produitEnregistreDansLocalStorage) {
     produitEnregistreDansLocalStorage.push(ours);
     localStorage.setItem(
@@ -182,6 +185,8 @@ function afficher(ours) {
       JSON.stringify(produitEnregistreDansLocalStorage)
     );
     console.log(produitEnregistreDansLocalStorage);
+
+    //s'il n'y a pas de produit enregistré dans local storage
   } else {
     produitEnregistreDansLocalStorage = [];
     produitEnregistreDansLocalStorage.push(ours);
