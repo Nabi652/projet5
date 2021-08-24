@@ -172,8 +172,8 @@ function afficher(ours) {
   //ajout du bouton (variable : bouton) à <a>
   ajouterAuPanier.appendChild(bouton);
 
-  //selection menu deroulant quantite
-  let deroulant = document.getElementById("quantite");
+  //selection menu deroulant quantites
+  let deroulant = document.getElementById("quantites");
 
   //ajout à box-prix
   boxPrixBouton.appendChild(deroulant);
@@ -190,10 +190,12 @@ function afficher(ours) {
   boxEnsemble1.appendChild(deroulant);
 
   //si le tableau n'existe c'est 0
-  let nbItem = document.getElementById("nombreItem");
+  let nbItem = document.getElementById("nombreItem"); // span qui contient numéro près du panier
   if (localStorage.getItem("panier") == null) {
+    // si rien dans tableau alors renvoie null (0)
     nbItem.innerHTML = 0;
   } else {
+    //si qqchose dans tableau alors renvoie la longueur du tableau
     let tab = JSON.parse(localStorage.getItem("panier"));
     nbItem.innerHTML = tab.length; // longueur du tableau
     //quand on vient ajouter un produit
@@ -204,15 +206,17 @@ const maFonctionAjout = () => {
   let panierStr = localStorage.getItem("panier"); // panier n'est pas un objet mais une chaine
   //
   if (panierStr == null) {
-    panier = [];
+    //si panierstr vide alors
+    panier = []; //on crée tableau vide
   } else {
+    //sinon : on ajoute au panier json.parse(panierstr)
     panier = JSON.parse(panierStr);
   }
   //dans notre panier on aura un objet ligne
   //tableau ligne sur une ligne
   let ligne = {};
   //menu déroulant : ligne.qte = docgetelementbyId(selecteur menu deourlant).value
-  ligne.qte = 1;
+  ligne.qte = document.getElementById("quantites").value;
   ligne.produit = produit; //prix
   ligne.couleur = document.getElementById("couleurs").value;
 
