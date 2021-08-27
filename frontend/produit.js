@@ -189,6 +189,7 @@ function afficher(ours) {
   boxEnsemble1.appendChild(ajouterAuPanier);
   boxEnsemble1.appendChild(deroulant);
 
+  //pour ne pas perdre le panier au chargement
   //si le tableau n'existe c'est 0
   let nbItem = document.getElementById("nombreItem"); // span qui contient numéro près du panier
   if (localStorage.getItem("panier") == null) {

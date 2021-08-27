@@ -333,20 +333,18 @@ const maFonctionAjout = () => {
   //dans notre panier on aura un objet ligne
   //tableau ligne sur une ligne
   let ligne = {};
-  //menu déroulant : ligne.qte = docgetelementbyId(selecteur menu deourlant).value
+  ligne.qte = document.getElementById("quantites").value;
   ligne.qte = 1;
   ligne.produit = produit; //prix
   ligne.couleur = document.getElementById("couleurs").value;
-
-  // autre façon d'écrire un objet !!
-  // let ligne = {
-  //   qte : 1,
-  //   produit: ours,
-  //   couleur : "rouge"
-  // }
 
   panier.push(ligne); // laligne est dans le tableau
   let nbItem = document.getElementById("nombreItem");
   nbItem.innerHTML = panier.length; // quand on ajoute on vient mettre à jour le chiffre du panier
   localStorage.panier = JSON.stringify(panier); // a la place de setItem
+
+  for (let ligne of panier)
+    if (panier == ligne) {
+      panier = document.get;
+    }
 };

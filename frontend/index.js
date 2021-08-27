@@ -90,7 +90,7 @@ function afficheList(tableau) {
   }
 
   //si le tableau n'existe c'est 0
-  let nbItem = document.getElementById("nombreItem");
+  let nbItem = document.getElementById("nombreItem"); //#nombreItem c'est le span (chiffre) de l'icone panier
   if (localStorage.getItem("panier") == null) {
     nbItem.innerHTML = 0;
   } else {
@@ -111,8 +111,7 @@ const maFonctionAjout = () => {
   //dans notre panier on aura un objet ligne
   //tableau ligne sur une ligne
   let ligne = {};
-  //menu déroulant : ligne.qte = docgetelementbyId(selecteur menu deourlant).value
-  ligne.qte = 1;
+  ligne.qte = document.getElementById("quantites").value;
   ligne.produit = produit; //prix
   ligne.couleur = document.getElementById("couleurs").value;
 
