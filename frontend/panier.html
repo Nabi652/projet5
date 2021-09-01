@@ -76,12 +76,14 @@
             <label for="ville">Ville </label>
             <input type="ville" id="ville" />
           </div>
-          <br />
-          <div class="box7 box">
-            <button>Valider pour paiement</button>
-          </div>
-        </form>
-      </div> -->
+          <br />-->
+      <div class="box7">
+        <button class="poursuivreBtn" onclick="openForm()">
+          Passer commande
+        </button>
+      </div>
+      <!-- </form>
+      </div>  -->
     </aside>
 
     <!-- formulaire -->
@@ -167,7 +169,7 @@
         <td class="tdTotal"></td>
         <td class="tdPrix"></td>
         <td class="tdButtonEnlever">
-          <button onclick="enlever(this)">Enlever</button>
+          <button class="btn-enlever" onclick="enlever(this)">Enlever</button>
         </td>
         <!-- // this c'est comme un document.getelement (selecteur) -->
       </tr>
