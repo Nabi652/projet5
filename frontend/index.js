@@ -99,31 +99,3 @@ function afficheList(tableau) {
     //quand on vient ajouter un produit
   }
 }
-
-const maFonctionAjout = () => {
-  let panierStr = localStorage.getItem("panier"); // panier n'est pas un objet mais une chaine
-  //
-  if (panierStr == null) {
-    panier = [];
-  } else {
-    panier = JSON.parse(panierStr);
-  }
-  //dans notre panier on aura un objet ligne
-  //tableau ligne sur une ligne
-  let ligne = {};
-  ligne.qte = document.getElementById("quantites").value;
-  ligne.produit = produit; //prix
-  ligne.couleur = document.getElementById("couleurs").value;
-
-  // autre façon d'écrire un objet !!
-  // let ligne = {
-  //   qte : 1,
-  //   produit: ours,
-  //   couleur : "rouge"
-  // }
-
-  panier.push(ligne); // laligne est dans le tableau
-  let nbItem = document.getElementById("nombreItem");
-  nbItem.innerHTML = panier.length; // quand on ajoute on vient mettre à jour le chiffre du panier
-  localStorage.panier = JSON.stringify(panier); // a la place de setItem
-};

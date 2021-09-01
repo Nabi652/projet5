@@ -8,5 +8,3 @@
 // };
 
 // spanPanierNumber();
-
-//creation d'une fonction pour voir si'l ya  qqchose dans mon local storage

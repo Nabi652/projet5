@@ -8,7 +8,7 @@ let id = url.substring(url.lastIndexOf("=") + 1);
 //lastindexof retourne la position du caractère
 // alert(id); //1234
 //création de variable vide
-let produit;
+let produit; // creation du produit vide
 let url2 = "http://localhost:3000/api/teddies/" + id;
 fetch(url2)
   .then((response) => response.json())
@@ -16,7 +16,7 @@ fetch(url2)
     console.log(ours);
     afficher(ours);
     //quand je recupere le produit, j'ai "ours" (ours stocké dans une ligne)
-    produit = ours;
+    produit = ours; /// fetch das le quel on recupere l'ours
   });
 
 //-------------------------------------------------------
@@ -218,7 +218,7 @@ const maFonctionAjout = () => {
   let ligne = {};
   //menu déroulant : ligne.qte = docgetelementbyId(selecteur menu deourlant).value
   ligne.qte = document.getElementById("quantites").value;
-  ligne.produit = produit; //prix
+  ligne.produit = produit; //le prix, les options
   ligne.couleur = document.getElementById("couleurs").value;
 
   // autre façon d'écrire un objet !!
@@ -232,4 +232,10 @@ const maFonctionAjout = () => {
   let nbItem = document.getElementById("nombreItem");
   nbItem.innerHTML = panier.length; // quand on ajoute on vient mettre à jour le chiffre du panier
   localStorage.panier = JSON.stringify(panier); // a la place de setItem
+
+  for (i = 0; i < panier.length; i++) {
+    if (panier == null) {
+      boxPanier.innerHTML = panierVide;
+    }
+  }
 };

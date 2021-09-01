@@ -128,9 +128,6 @@ button {
   font-size: large;
   font-weight: bolder;
   margin-right: 10px;
-}
-
-button {
   border: 1px solid grey;
   border-radius: 5px;
   background: linear-gradient(190deg, #9356dc, #ff79da);
