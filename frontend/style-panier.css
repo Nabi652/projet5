@@ -10,6 +10,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   height: 100vh;
 }
+
 /* ------------------------------- logo ---------------------*/
 .box-logo {
   height: 180px;
@@ -50,6 +51,12 @@ li a:hover {
   color: #af6ca2;
   font-weight: bolder;
   cursor: default;
+}
+
+/* titre h1 qui générera les numéros de commande */
+
+h1 {
+  display: none;
 }
 
 /* -------------------------------------- tableau pour le panier ---------------*/

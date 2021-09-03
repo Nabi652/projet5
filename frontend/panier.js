@@ -72,6 +72,10 @@ li5.textContent = "Supprimer";
 
 //ajout de <li> à <ul>
 ligne1.appendChild(li5);
+let boutonNumeroCommande = document.getElementsByClassName("paiementBtn");
+let boutonPoursuivre = document.getElementsByClassName("poursuivreBtn");
+console.log(boutonPoursuivre);
+let numeroCommande = document.querySelector("h1");
 
 // formulaire
 function openForm() {
@@ -80,6 +84,26 @@ function openForm() {
 
 function closeForm() {
   document.getElementById("popupForm").style.display = "none";
+
+  //si on ferme le popup alors le h1 (numero de commande)apparait:
+  if (closeForm) {
+    numeroCommande.style = "display:inherit";
+    numeroCommande.style.textAlign = "center";
+    numeroCommande.innerHTML =
+      /*genérer numéro aléatoire */
+      "Merci pour votre Commande <br> Numéro de commande " +
+      Math.floor(100000 + Math.random() * 900000);
+    let tableau = document.getElementById("tableau");
+    let template = document.getElementById("ligne");
+    /* disparation du panier quand on clique sur aller vers paiement*/
+    tableau.style.display = "none";
+    template.style.display = "none";
+    boxPanier.style.display = "none";
+    let boutonTest = document.getElementById("btnRetour");
+    boutonTest.innerHTML = "retour à l'accueil";
+    boutonTest.style.padding = "10px";
+    // boutonTest.style.display = "none";
+  }
 }
 
 //si le tableau n'existe c'est 0
@@ -126,7 +150,7 @@ tableau.appendChild(clone);
 //bouton
 function enlever(btn) {
   // btn.remove();
-  //btn parent element = td == > tr
+  //btn parent element = td == > tr : btn.parentElement(=td).parentElement(=tr)
   let tr = btn.parentElement.parentElement;
 
   let indice = tr.rowIndex;
@@ -135,3 +159,5 @@ function enlever(btn) {
   localStorage.panier = JSON.stringify(tab); // a la place de setItem
   location.reload();
 }
+
+// au clic un numéro de commande apparait //
