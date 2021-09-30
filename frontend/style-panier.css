@@ -141,14 +141,6 @@ li {
 }
 /* Masquez la forme Popup */
 .form-popup {
-  display: none;
-  position: fixed;
-  left: 45%;
-  top: 2%;
-  transform: translate(-45%, 5%);
-  border: 2px solid #666;
-  z-index: 9;
-  width: 70%;
 }
 /* Styles pour le conteneur de la forme */
 .form-container {
@@ -158,7 +150,8 @@ li {
 }
 /* Largeur complète pour les champs de saisie */
 .form-container input[type="text"],
-.form-container input[type="password"] {
+.form-container input[type="email"],
+.form-container input[type="number"] {
   width: 100%;
   padding: 10px;
   margin: 5px 0 22px 0;
@@ -191,4 +184,12 @@ li {
   display: block;
   margin: auto;
   margin-top: 55px;
+}
+
+/* message erreur du formulaire mal rempli */
+
+#erreur {
+  color: red;
+  text-align: center;
+  font-weight: bold;
 }

@@ -72,39 +72,8 @@ li5.textContent = "Supprimer";
 
 //ajout de <li> à <ul>
 ligne1.appendChild(li5);
-let boutonNumeroCommande = document.getElementsByClassName("paiementBtn");
-let boutonPoursuivre = document.getElementsByClassName("poursuivreBtn");
-console.log(boutonPoursuivre);
-let numeroCommande = document.querySelector("h1");
 
-// formulaire
-function openForm() {
-  document.getElementById("popupForm").style.display = "block";
-}
-
-function closeForm() {
-  document.getElementById("popupForm").style.display = "none";
-
-  //si on ferme le popup alors le h1 (numero de commande)apparait:
-  if (closeForm) {
-    numeroCommande.style = "display:inherit";
-    numeroCommande.style.textAlign = "center";
-    numeroCommande.innerHTML =
-      /*genérer numéro aléatoire */
-      "Merci pour votre Commande <br> Numéro de commande " +
-      Math.floor(100000 + Math.random() * 900000);
-    let tableau = document.getElementById("tableau");
-    let template = document.getElementById("ligne");
-    /* disparation du panier quand on clique sur aller vers paiement*/
-    tableau.style.display = "none";
-    template.style.display = "none";
-    boxPanier.style.display = "none";
-    let boutonTest = document.getElementById("btnRetour");
-    boutonTest.innerHTML = "retour à l'accueil";
-    boutonTest.style.padding = "10px";
-    // boutonTest.style.display = "none";
-  }
-}
+/* --------- panier */
 
 //si le tableau n'existe c'est 0
 let nbItem = document.getElementById("nombreItem");
@@ -117,6 +86,12 @@ if (localStorage.getItem("panier") == null) {
   //quand on vient ajouter un produit
 }
 
+// formulaire
+function openForm() {
+  // document.getElementById("popupForm").style.display = "block";
+  location.href = "./formulaire.html";
+}
+
 //dfinir une zone d'accueil //
 let tableau = document.getElementById("tableau");
 let template = document.getElementById("ligne");
@@ -124,24 +99,25 @@ let total = 0;
 for (let ligne of tab) {
   // tab = local storage qui s'affiche
   //ci dessous on va cloner le tableau :
-  let clone = template.content.cloneNode(true);
+  let clone = template.content.cloneNode(true); // <tr>...</tr> copier coller de tout ce qu'il y a dans la balise template
+  //ppur construire nouvelle ligne on clone le tr, et a des emplacement bien precis on ajoute le nom, le prix etc
   //on selectionn tous les td dans un tableau
-  let td = clone.querySelectorAll("td"); // on selectionne dans le clone
-  td[0].innerHTML = ligne.produit.name + "<br><i>" + ligne.couleur + "</i>";
+  let td = clone.querySelectorAll("td"); // on selectionne dans le clone  //il va nous mettre un selecteur sur chaque td // on crée un selecteur (td= slecteur)
   td[1].textContent = ligne.qte;
+  td[0].innerHTML = ligne.produit.name + "<br><i>" + ligne.couleur + "</i>";
   let totalLigne = (ligne.qte * ligne.produit.price) / 100;
   td[2].textContent = ligne.produit.price / 100 + "€";
-  td[3].textContent = totalLigne;
+  td[3].textContent = totalLigne + "€";
   total += totalLigne;
   //on met le clone dans le tableau
   tableau.appendChild(clone);
 }
 
 let clone = template.content.cloneNode(true);
-//on selectionn tous les td dans un tableau
+// //on selectionn tous les td dans un tableau
 let td = clone.querySelectorAll("td"); // on selectionne dans le clone
 td[2].innerHTML = "<b>TOTAL</b>";
-td[3].innerHTML = "<b>" + total + "</b>";
+td[3].innerHTML = "<b>" + total + "€</b>";
 td[4].innerHTML = ""; //enlever le bouton devant total
 tableau.appendChild(clone);
 
@@ -152,7 +128,6 @@ function enlever(btn) {
   // btn.remove();
   //btn parent element = td == > tr : btn.parentElement(=td).parentElement(=tr)
   let tr = btn.parentElement.parentElement;
-
   let indice = tr.rowIndex;
   tr.remove();
   tab.splice(indice, 1);
@@ -160,4 +135,4 @@ function enlever(btn) {
   location.reload();
 }
 
-// au clic un numéro de commande apparait //
+//ajouter code pour le panier gardé //

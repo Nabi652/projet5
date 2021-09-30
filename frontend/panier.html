@@ -31,7 +31,7 @@
     </header>
 
     <main>
-      <h1 id="titre1">0</h1>
+      <!-- <h1 id="titre1">0</h1> -->
       <!-- <div class="box-panier">
         <ul>
           <li>Produit</li>
@@ -86,84 +86,9 @@
       <!-- </form>
       </div>  -->
     </aside>
-
-    <!-- formulaire -->
-
-    <div class="login-popup">
-      <div class="form-popup" id="popupForm">
-        <form action="/action_page.php" class="form-container">
-          <h2 class="h2Formulaire">Veuillez entrer vos informations</h2>
-          <label for="nom">
-            <strong>Nom</strong>
-          </label>
-          <input
-            type="text"
-            id="nom"
-            placeholder="Votre nom"
-            name="nom"
-            required
-          />
-          <label for="prenom">
-            <strong>Prénom</strong>
-          </label>
-          <input
-            type="text"
-            id="prenom"
-            placeholder="Votre prénom"
-            name="prenom"
-            required
-          />
-          <label for="email">
-            <strong>Email</strong>
-          </label>
-          <input
-            type="text"
-            id="email"
-            placeholder="Votre email"
-            name="emai"
-            required
-          />
-          <label for="adresse">
-            <strong>Adresse</strong>
-          </label>
-          <input
-            type="text"
-            id="adresse"
-            placeholder="Votre adresse"
-            name="adresse"
-            required
-          />
-
-          <label for="code">
-            <strong>Code postal</strong>
-          </label>
-          <input
-            type="text"
-            id="code"
-            placeholder="Votre code postal"
-            name="code"
-            required
-          />
-
-          <label for="ville">
-            <strong>Ville</strong>
-          </label>
-          <input
-            type="text"
-            id="ville"
-            placeholder="Votre ville"
-            name="ville"
-            required
-          />
-
-          <button type="button" class="btn paiementBtn" onclick="closeForm()">
-            Continuer vers le paiement
-          </button>
-        </form>
-      </div>
-    </div>
-
+    <!-- on va dupliquer tout ce qu'il y a dans la balise template  -->
     <template id="ligne">
+      <!-- le clone c'est tr ouvrant et tr fermant parce qu'on clone le contenu de template -->
       <tr>
         <td class="tdNom"></td>
         <td class="tdQuantite"></td>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panier</title>
+    <link rel="stylesheet" href="./style-panier.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+
+  <body>
+    <header>
+      <div class="ensemble-header">
+        <div class="box-logo">
+          <a href="../index.html">
+            <img src="./assets/logo.PNG" alt="logo oricono" class="img-logo"
+          /></a>
+        </div>
+        <ul>
+          <li>
+            <a href="../index.html">
+              <i class="fas fa-shopping-basket"> </i>
+              <span id="nombreItem">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <!-- formulaire -->
+    <main>
+      <p id="erreur"></p>
+      <div class="login-popup">
+        <div class="form-popup" id="popupForm">
+          <form id="inscription" class="form-container">
+            <h2 class="h2Formulaire">Veuillez entrer vos informations</h2>
+            <label for="nom">
+              <strong>Nom</strong>
+            </label>
+            <input type="text" id="nom" placeholder="Votre nom" name="nom" />
+            <label for="prenom">
+              <strong>Prénom</strong>
+            </label>
+            <input
+              required
+              type="text"
+              id="prenom"
+              placeholder="Votre prénom"
+              name="prenom"
+            />
+            <label for="email">
+              <strong>Email</strong>
+            </label>
+            <input
+              required
+              type="email"
+              id="email"
+              placeholder="Votre email"
+              name="email"
+            />
+            <br />
+            <label for="adresse">
+              <strong>Adresse</strong>
+            </label>
+            <input
+              required
+              type="text"
+              id="adresse"
+              placeholder="Votre adresse"
+              name="adresse"
+            />
+
+            <label for="code">
+              <strong>Code postal</strong>
+            </label>
+            <input
+              required
+              type="number"
+              id="code"
+              placeholder="Votre code postal"
+              name="code"
+            />
+
+            <label for="ville">
+              <strong>Ville</strong>
+            </label>
+            <input
+              required
+              type="text"
+              id="ville"
+              placeholder="Votre ville"
+              name="ville"
+            />
+
+            <button class="paiementBtn" type="submit">
+              Valider la commande
+            </button>
+          </form>
+        </div>
+      </div>
+    </main>
+    <script src="./formulaire.js"></script>
+  </body>
+</html>

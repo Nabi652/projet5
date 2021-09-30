@@ -181,11 +181,8 @@ function afficher(ours) {
   //creation div pour ensemle bouton et menu deroulant quantité
 
   let boxEnsemble1 = document.createElement("div");
-
   boxEnsemble1.setAttribute("class", "ensemble1");
-
   ensembleInfos.appendChild(boxEnsemble1);
-
   boxEnsemble1.appendChild(ajouterAuPanier);
   boxEnsemble1.appendChild(deroulant);
 
@@ -232,10 +229,4 @@ const maFonctionAjout = () => {
   let nbItem = document.getElementById("nombreItem");
   nbItem.innerHTML = panier.length; // quand on ajoute on vient mettre à jour le chiffre du panier
   localStorage.panier = JSON.stringify(panier); // a la place de setItem
-
-  for (i = 0; i < panier.length; i++) {
-    if (panier == null) {
-      boxPanier.innerHTML = panierVide;
-    }
-  }
 };
