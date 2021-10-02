@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>La boutique des oursons</title>
-    <link rel="stylesheet" href="frontend/style.css">
+    <link rel="stylesheet" href="./frontend/style/style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
@@ -15,11 +15,15 @@
     <header>
       <div class="ensemble-header">
         <div class="box-logo">
-          <img src="./frontend/assets/logo.PNG" alt="logo oricono" class="img-logo" />
+          <img
+            src="./frontend/assets/logo.PNG"
+            alt="logo oricono"
+            class="img-logo"
+          />
         </div>
         <ul>
           <li>
-            <a href="./frontend/panier.html">
+            <a href="./frontend/html/panier.html">
               <i class="fas fa-shopping-basket"></i>
               <span id="nombreItem">0</span>
             </a>
@@ -29,89 +33,19 @@
     </header>
 
     <main class="ourson">
-      <h1>Découvrez nos oursons trop mignons</h1> 
+      <h1>Découvrez nos oursons trop mignons</h1>
 
-    <div class="container" id="list">
-      <!-- <div class="cell box-norbert">
-          <h2>Norbert</h2>
-          <div class="box-img">
-            <img src="../backend/images/teddy_1.jpg" alt="l'ours Norbert" />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo
-            accusantium sequi velit similique quod esse voluptatum nobi.
-          </p>
-          <h3>29,00€</h3>
-          <button><a href="./produit.html">+</button></a>
-        </div>
-
-        <div class="cell box-arnold">
-          <h2>Arnold</h2>
-          <div class="box-img">
-            <img src="../backend/images/teddy_2.jpg" alt="l'ours Arnold" />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo
-            accusantium sequi velit similique quod esse voluptatum nobi.
-          </p>
-          <h3>39,00€</h3>
-          <button><a href="./produit.html">+</button></a>
-        </siv>
-
-        <div class="cell box-lenny">
-          <h2>Lenny & Carl</h2>
-          <div class="box-img">
-            <img
-              src="../backend/images/teddy_3.jpg"
-              alt="les ours Lenny et Carl"
-            />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo
-            accusantium sequi velit similique quod esse voluptatum nobi.
-          </p>
-          <h3>59,00€</h3>
-          <button><a href="./produit.html">+</button></a>
-        </div>
-
-        <div class="cell box-gustav">
-          <h2>Gustav</h2>
-          <div class="box-img">
-            <img src="../backend/images/teddy_4.jpg" alt="l'ours Gustav" />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo
-            accusantium sequi velit similique quod esse voluptatum nobi.
-          </p>
-          <h3>45,00€</h3>
-          <button><a href="./produit.html">+</button></a>
-        </div>
-
-        <div class="cell box-garfunkel">
-          <h2>Garfunkel</h2>
-          <div class="box-img">
-            <img src="../backend/images/teddy_5.jpg" alt="l'ours Garfunkel" />
-          </div>
-          <p>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quo
-            accusantium sequi velit similique quod esse voluptatum nobi.
-          </p>
-          <h3>55,00€</h3>
-          <button><a href="./produit.html">+</button></a>
-        </div> 
-      </div> -->
-    </div>
-
-     <footer>
+      <div class="container" id="list"></div>
+    </main>
+    <footer>
       <div class="box-footer">
         <ul>
-          <a href="#"> <li>Contact</li></a>
-          <a href="#"> <li>Mentions légales</li></a>
-          <a href="#"> <li>CGV</li></a>
+          <li><a href="#"> Contact</a></li>
+          <li><a href="#">Mentions légales</a></li>
+          <li><a href="#">CGV</a></li>
         </ul>
       </div>
-    </footer> 
-    <script src="./frontend/index.js"></script>
- 
+    </footer>
+    <script src="./frontend/javascript/index.js"></script>
   </body>
 </html>

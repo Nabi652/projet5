@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Panier</title>
+    <link rel="stylesheet" href="../style/style-panier.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="ensemble-header">
+        <div class="box-logo">
+          <a href="/index.html">
+            <img src="../assets/logo.PNG" alt="logo oricono" class="img-logo"
+          /></a>
+        </div>
+        <ul>
+          <li>
+            <a href="/index.html">
+              <i class="fas fa-shopping-basket"> </i>
+              <span id="nombreItem">0</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main></main>
+    <table class="box-panier" id="tableau"></table>
+
+    <aside>
+      <div class="box7">
+        <button class="poursuivreBtn" id="btnRetour" onclick="openForm()">
+          Passer commande
+        </button>
+      </div>
+    </aside>
+
+    <template id="ligne">
+      <tr>
+        <td class="tdNom"></td>
+        <td class="tdQuantite"></td>
+        <td class="tdTotal"></td>
+        <td class="tdPrix"></td>
+        <td class="tdButtonEnlever">
+          <button class="btn-enlever" onclick="enlever(this)">Enlever</button>
+        </td>
+      </tr>
+    </template>
+    <script src="../javascript/panier.js"></script>
+  </body>
+</html>
